@@ -2,28 +2,30 @@ import {Component} from 'react'
 import './index.css'
 
 class Welcome extends Component {
-    state = {isSubscribe: true, content: "Subscribe"}
+  state = {isSubscribed: true, subContent: 'Subscribe'}
 
-    onClickChange =(event) => {
-        this.setState((prevState) => ({
-            const gettingStatus = prevState.isSubscribe
-            return( if (gettingStatus === true){
-                prevState.isSubscribe = false
-                prevState.content = "Subscribed"
-            } else{
-                prevState.isSubscribe = false
-                prevState.content = "Subscribe"
-            })
-        })
-    }
+  OnClickButton = () => {
+    this.setState(prevState =>
+      prevState.isSubscribed
+        ? {isSubscribed: false, subContent: 'Subscribed'}
+        : {isSubscribed: true, subContent: 'Subscribe'},
+    )
+  }
 
   render() {
-      const {isSubscribe, content} = this.state
+    const {subContent} = this.state
+
     return (
       <div className="main-bg-container">
         <h1>Welcome</h1>
         <p>Thank you! Happy Learning</p>
-       <button className="button-style" type="button">{content}</button>
+        <button
+          onClick={this.OnClickButton}
+          type="button"
+          className="button-style"
+        >
+          {subContent}
+        </button>
       </div>
     )
   }
