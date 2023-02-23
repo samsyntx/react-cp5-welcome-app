@@ -1,0 +1,18 @@
+.main-bg-container {
+  background-color: #1e293b;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Bree Serif;
+  color: white;
+}
+.button-style {
+  background-color: white;
+  border: none;
+  color: black;
+  font-family: Bree Serif;
+  padding: 10px 15px 10px 15px;
+  border-radius: 10px;
+}
